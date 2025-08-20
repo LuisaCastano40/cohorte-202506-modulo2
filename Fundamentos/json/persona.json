@@ -1,0 +1,12 @@
+{
+   "id" : 1,
+   "nombre": "Luisa Castaño",
+   "edad": 25,
+   "direccion": {
+    "ciudad":"Medellín",
+    "pais": "Colombia"
+   },
+   "hobbies" : ["dibujar", "senderismo", "leer"],
+   "esCasada": false
+}
+
