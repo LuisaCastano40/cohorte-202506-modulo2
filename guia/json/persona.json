@@ -1,0 +1,16 @@
+{
+  "id": 1,
+  "nombre": "Luisa Fernanda Castaño",
+  "edad": 28,
+  "correo": "luisa.castano@example.com",
+  "telefono": "+57 3101234567",
+  "direccion": {
+    "calle": "Calle 45 #12-34",
+    "ciudad": "Medellín",
+    "pais": "Colombia",
+    "codigo_postal": "050021"
+  },
+  "ocupacion": "Desarrolladora Full Stack",
+  "hobbies": ["leer", "programar", "viajar"],
+  "activo": true
+}

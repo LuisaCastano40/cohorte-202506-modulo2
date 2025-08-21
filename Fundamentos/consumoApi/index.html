@@ -1,11 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Consumo Api</title>
+    <script defer src="./script.js"></script>    
+    <!--async/defer - js
+        async - > scripts externos
+        defer -> scripts propios
+    -->
 </head>
-<body>
-    
+
+<body id="body">
+    <header>
+        <h1>Consumo de Apis</h1>
+    </header>
+
+    <main>
+        <section>
+            <button id="btn-info" onclick="cargarInformacion()" >Mostrar mi información</button>
+            <button onclick="cargarApi()">Mostrar Api</button>
+        </section>
+
+        <section id="datos"></section>
+    </main>
+
+    <footer>
+        Creado por BOOTCAMP DESARROLLO WEB FULL STACK 2025 BIT
+    </footer>
+
 </body>
+
 </html>
