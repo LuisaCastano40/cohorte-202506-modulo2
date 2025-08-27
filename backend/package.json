@@ -1,0 +1,20 @@
+{
+  "name": "proyecto-clase",
+  "version": "1.0.0",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js",
+    "dev":"nodemon app.js"
+  },
+  "license": "ISC",
+  "keywords": [],
+  "author": "Luisa Castaño",
+  "description": "Proyecto de clase bootcamp desarrollo web full stack",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
