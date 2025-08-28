@@ -1,15 +1,16 @@
 // El archivo de ejecución de nuestra applicación
 // configurar nuestro servidor y gestionar la lógica de negocio
 
-// 1. Importar las dependencias necesarias
+// 1. Importar las dependencias y modulos necesarios 
 import express from "express";
-
-
+import dotenv from "dotenv";
+import { conexionMongo } from "./src/config/db.js";
 
 // 2. configurar las dependencias que necesitemos
 const app = express();
-const port = 3000;
-
+dotenv.config();
+const port = process.env.PORT;
+conexionMongo(); //esto es lo que hace la conexión con db
 
 // 3. funcionalidades que necesite agregar
 app.get("/",(req,res)=>{
