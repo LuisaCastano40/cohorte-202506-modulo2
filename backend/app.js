@@ -5,6 +5,8 @@
 import express from "express";
 import dotenv from "dotenv";
 import { conexionMongo } from "./src/config/db.js";
+import { productRouter } from "./src/routes/products.routes.js";
+import { userRouter } from "./src/routes/users.routes.js";
 
 // 2. configurar las dependencias que necesitemos
 const app = express();
@@ -13,9 +15,13 @@ const port = process.env.PORT;
 conexionMongo(); //esto es lo que hace la conexión con db
 
 // 3. funcionalidades que necesite agregar
-app.get("/",(req,res)=>{
- res.send("Server works!")
+app.get("/",(request,response)=>{
+ response.send("Server works!")
 });
+
+app.use(express.json()); //es para usar formato json
+app.use("/products", productRouter);
+app.use("/users", userRouter)
 
 
 // 4. levantar el servidor //3000, 9000
