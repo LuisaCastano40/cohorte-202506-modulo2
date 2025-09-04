@@ -21,7 +21,7 @@ app.get("/",(request,response)=>{
 
 app.use(express.json()); //es para usar formato json
 app.use("/products", productRouter);
-app.use("/users", userRouter)
+app.use("/users", userRouter);
 
 
 // 4. levantar el servidor //3000, 9000
