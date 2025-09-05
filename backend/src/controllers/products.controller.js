@@ -44,7 +44,7 @@ export const getAllProducts = async (request, response) => {
 // 3. Método para ACTUALIZAR un producto -> PUT
 export const putProductById = async (request, response) => {
     try {
-        const idForUpdate = request.params;
+        const idForUpdate = request.params.id;
         const dataForUpdate = request.body;
 
         await productModel.findByIdAndUpdate(idForUpdate, dataForUpdate);
@@ -64,7 +64,7 @@ export const putProductById = async (request, response) => {
 // 4. Método para ELIMINAR un producto -> DELETE
 export const deleteProductById = async (request, response) => {
     try {
-        const idForDelete = request.params;
+        const idForDelete = request.params.id;
         await productModel.findByIdAndDelete(idForDelete);
 
         return response.status(200).json({
