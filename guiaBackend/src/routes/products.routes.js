@@ -7,7 +7,7 @@ import { postProduct, getAllProducts, putProductById, deleteProductById } from "
 export const productRouter = express.Router();
 
 // Ruta para el POST
-productRouter.post("/crear", postProduct);
+productRouter.post("/crear", upload.single("image"), postProduct);
 
 // Ruta para el GET
 productRouter.get("/mostrar", getAllProducts);

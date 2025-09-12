@@ -19,9 +19,11 @@ if (!fs.existsSync(UPLOADS_FOLDER)) {
 
 // Storage en disco: dónde y cómo nombrar el archivo
 const storage = multer.diskStorage({
+  //¿a qué carpeta guardar el archivo?
   destination: (req, file, cb) => {
     cb(null, UPLOADS_FOLDER);
   },
+  //¿qué nombre ponerle al archivo?
   filename: (req, file, cb) => {
     // Mantener extensión original, normalizar espacios en el nombre
     const ext = path.extname(file.originalname);
@@ -33,8 +35,10 @@ const storage = multer.diskStorage({
 // Filtro de archivos: ejemplo simple que permite solo imágenes
 function fileFilter(req, file, cb) {
   const allowed = ["image/jpeg", "image/png", "image/webp", "image/gif"];
+  //mimetype:identificador estándar que describe el tipo de contenido de un archivo
   if (allowed.includes(file.mimetype)) {
     cb(null, true);
+    //cb(null, true) -> si el archivo es permitido, se guarda en la carpeta uploads
   } else {
     cb(new Error("Tipo de archivo no permitido. Solo imágenes."), false);
   }
