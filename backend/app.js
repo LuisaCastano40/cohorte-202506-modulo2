@@ -7,6 +7,7 @@ import dotenv from "dotenv";
 import { conexionMongo } from "./src/config/db.js";
 import { productRouter } from "./src/routes/products.routes.js";
 import { userRouter } from "./src/routes/users.routes.js";
+import { loginRouter } from "./src/routes/login.routes.js";
 import cors from "cors";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -29,6 +30,7 @@ app.use(express.json()); //es para usar formato json
 app.use("/products", productRouter);
 app.use("/users", userRouter);
 app.use("/uploads", express.static(path.join(_dirname, "src/uploads")));
+app.use("/login", loginRouter);
 
 
 // 4. levantar el servidor //3000, 9000
