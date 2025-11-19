@@ -8,7 +8,7 @@ import { auth } from "../middleware/auth.js";
 export const productRouter = express.Router();
 
 // Ruta para el POST
-productRouter.post("/crear", auth("admin"),  upload.single("image"),  postProduct);
+    productRouter.post("/crear", auth("admin"),  upload.single("image"),  postProduct);
 
 // Ruta para el GET
 productRouter.get("/mostrar", getAllProducts);

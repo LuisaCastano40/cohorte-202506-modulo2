@@ -43,7 +43,7 @@ export const getAllProducts = async (request, response) => {
         const allProducts = await productModel.find();
 
         return response.status(200).json({
-            "mensaje": "Petición exitosa",
+            "mensaje": "Petición exitosa, estos son los productos de tu base de datos",
             "data": allProducts
         })
 

@@ -16,7 +16,7 @@ export const login = async (request, response) =>{
 
         if(!userFound){
             return response.status(404).json({
-                "mensaje": "Usuario no encontrado, por favor regístrate"
+                "mensaje": "Usuario no encontrado, por favor regístrate Guapura"
             });
         }
 
