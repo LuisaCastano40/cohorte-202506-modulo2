@@ -21,9 +21,6 @@ const _filename = fileURLToPath(import.meta.url); //_filename = backend/app.js
 const _dirname = path.dirname(_filename);//_dirname = backend
 
 // 3. funcionalidades que necesite agregar
-app.get("/",(request,response)=>{
- response.send("Server works!")
-});
 
 app.use(cors()); //habilita CORS
 app.use(express.json()); //es para usar formato json
@@ -31,6 +28,12 @@ app.use("/products", productRouter);
 app.use("/users", userRouter);
 app.use("/uploads", express.static(path.join(_dirname, "src/uploads")));
 app.use("/login", loginRouter);
+
+app.use(express.static(path.join(_dirname, "dist", "frontend", "browser")));
+
+app.get(/.*/, (req, res) => {
+  res.sendFile(path.join(_dirname, "dist", "frontend", "browser", "index.html"));
+});
 
 
 // 4. levantar el servidor //3000, 9000
